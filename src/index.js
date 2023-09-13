@@ -7,8 +7,8 @@ const argv = require("yargs").argv;
 function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
-     
-      break;
+        contactsModule.listContacts().then((list) => console.table(list));
+    break;
 
     case "get":
         break;
@@ -27,22 +27,3 @@ function invokeAction({ action, id, name, email, phone }) {
 
 invokeAction(argv);
 // ------------------------------------------------
-
-const fs=require('fs')
-
-const ejemploFuncion=(content)=>{
-
-    fs.readFile("readme.txt")
-    .then(data => console.log(data.toString()))
-    .catch(err=>console.log(err.message));
-
-    try{
-        fs.writeFileSync('C./readme.txt', content);
-    }catch(err){
-        console.log(err);
-    }
-
-}
-
-ejemploFuncion('datos para ingresar')
-export default ejemploFuncion

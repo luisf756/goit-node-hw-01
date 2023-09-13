@@ -2,17 +2,25 @@
   "name": "goit-node-hw-01",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
+  "main": "src/index.js",
+  
   "scripts": {
-    
+    "start": " node src/index.js",
+    "start:dev": " nodemon db/src/index.js",
+    "action": "node src/index.js --action ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "luisMG",
   "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
   "dependencies": {
-    "nodemon": "^3.0.1",
-    "serve": "^14.2.1"
+    
+    "serve": "^14.2.1",
+    "commander": "^11.0.0",
+    "uuid": "^9.0.0",
+    "yargs": "^17.7.2"
   }
 }

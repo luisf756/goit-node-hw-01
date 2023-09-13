@@ -5,8 +5,11 @@ const contactsPath = './db/contacts.json';
 
 
 function listContacts() {
+    return fs.readFile(contactsPath).then((data) => {
+      return JSON.parse(data.toString());
+    });
+  }
   
-}
 
 function getContactById(contactId) {
   
