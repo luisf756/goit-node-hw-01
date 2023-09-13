@@ -15,7 +15,8 @@ eliminar en este caso eliminamos el usuario mango por su id
 
 ![remove](https://github.com/luisf756/goit-node-hw-01/assets/21212135/e36b274e-9a9c-4880-8782-4fd3d6938ef2)
 
-la siguiente es la lista de comandos
+                       #la siguiente es la lista de comandos
+# Obtenemos y mostramos la lista completa de contactos en forma de tabla (console.table)
 node index.js --action list
 
 # Obtenemos un contacto según su id
