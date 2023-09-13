@@ -12,16 +12,43 @@ function listContacts() {
   
 
 function getContactById(contactId) {
-  
+    return listContacts().then((list) => {
+        const getById = list.find((contact) => contact.id === contactId);
+        if (getById==null){
+            console.log("not found contact"); 
+        }else{
+            return getById;
+        }
+        
+      });
 }
 
 function removeContact(contactId) {
-  
-}
+    return listContacts().then((list) => {
+      const filteredList = list.filter((contact) => contact.id !== contactId);
+      return fs
+        .writeFile(contactsPath, JSON.stringify(filteredList), (err) => {
+          if (err) {
+            console.log(err);
+          }
+        })
+        .then(() => `Contact with id ${contactId} was successfully removed.`);
+    });
+  }
 
 function addContact(name, email, phone) {
-  
-}
+    return listContacts().then((list) => {
+      const addUser = { id: uuidv4(), name, email, phone };
+      list.push(addUser);
+      return fs
+        .writeFile(contactsPath, JSON.stringify(list), (err) => {
+          if (err) {
+            console.log(err);
+          }
+        })
+        .then(() => `Contact was successfully created.`);
+    });
+  }
 
 module.exports = {
   listContacts,

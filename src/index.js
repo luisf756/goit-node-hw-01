@@ -11,19 +11,24 @@ function invokeAction({ action, id, name, email, phone }) {
     break;
 
     case "get":
+        contactsModule.getContactById(id).then((data) => console.table(data));
         break;
-    case "add":
-     
-      break;
-
-    case "remove":
-     
-      break;
-
-    default:
-      
+  
+      case "add":
+        contactsModule.addContact(name, email, phone).then((msg) => {
+          console.log(msg);
+        });
+        break;
+  
+      case "remove":
+        contactsModule.removeContact(id).then((msg) => {
+          console.log(msg);
+        });
+        break;
+  
+      default:
+        console.warn("\x1B[31m Unknown action type!");
+    }
   }
-}
-
-invokeAction(argv);
-// ------------------------------------------------
+  
+  invokeAction(argv);
