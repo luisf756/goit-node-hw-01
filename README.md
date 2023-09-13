@@ -1,3 +1,5 @@
+link de las imagenes de pruegas 
+https://monosnap.com/list/6501f4ef8dcd7051a859b27d
 # goit-node-hw-01
 Se listan las siguientes pruebas 
 
@@ -27,3 +29,4 @@ Eliminar. En este caso eliminamos el usuario mango por su id
 
 # Eliminamos un contacto
 #node src/index.js --action remove --id qdggE76Jtbfd9eWJHrssH
+
